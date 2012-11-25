@@ -5,7 +5,7 @@ class UserAction extends Action{
 		//$this->title='hello ,thinkPHP';
 		$Data = M('user'); // 实例化Data数据模型
 		$condition = '';
-        $this->data = $Data->field('',true)->order('id desc')->limit(10)->select();
+        $this->data = $Data->field('',true)->order('id desc')->limit(15)->select();
         $this->assign('title','用户管理');
 		$this->display();
 	}

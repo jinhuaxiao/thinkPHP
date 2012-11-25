@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>{$title}</title>
+</head>
+<body>
+<form action="__URL__/add" method="post">
+	<legend>用户注册</legend>
+	用户名：<input type='text' name='username'/>
+	密码:<input type='password' name='password' />
+	确认密码：<input type='repassword' name='repassword'/>
+	<button type='submit'>提交</button>
+</form>
+	<hr/>
+	<volist name="data" id="vo">
+    Id:{$vo.id}---用户名：{$vo.username}<br/>
+    </volist>
+</body>
+</html>

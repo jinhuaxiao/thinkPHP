@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>{$title}</title>
+</head>
+<body>
+<form action="__URL__/add" method="post" onsubmit="return check()">
+	<legend>用户注册</legend>
+	用户名：<input type='text' name="username" id="username"/>
+	密码:<input type='password' name="password" id="password1"/>
+	确认密码：<input type='password' name="repassword" id="password2"/>
+	<button type='submit'>提交</button>
+</form>
+	<hr/>
+	<volist name="data" id="vo">
+    <li>Id:{$vo.id}---用户名：{$vo.username}<span><a href="__URL__/edit?id={$vo.id}">编辑</a></span><span><a href="__URL__/delete?id={$vo.id}"> 删除</a></span></li>
+
+    </volist>
+</body>
+<script>
+String.prototype.Trim = function() { 
+	return this.replace(/(^\s*)|(\s*$)/g, ""); 
+} 
+function check () {
+	var username = document.getElementById('username').value;
+	var password1 = document.getElementById('password1').value;
+	var password2 = document.getElementById('password2').value;
+	if(username.Trim() == ''){
+		alert('用户名不能为空');
+		return false;
+	}
+}
+</script>
+</html>
